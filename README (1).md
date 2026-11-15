@@ -35,37 +35,43 @@ Fixing the 15 hotspots alone recovers about ₹29 L a year. Protecting new rider
 
 **1. Failures spike seasonally while the business scales.** Outside April to June, the failure rate is stable near 3.9% despite a near-tripling of volume. The summer peaks (11.9% in May 2024, 9.5% in May 2025) are dominated by "no charged battery" and riders abandoning the queue. The Q2 rate improved year on year (9.4% to 7.9%), but volume growth means more riders hit a failure. Three-wheelers fail at twice the rate of two-wheelers (10.0% vs 5.0%), and failures peak in the 19:00 to 22:00 evening window.
 
-![Volume, revenue, failure rate and margin per swap by month](figs/03_q1_indexed_trend.png)
+<img width="2375" height="767" alt="03_q1_indexed_trend" src="https://github.com/user-attachments/assets/381b2770-3d2a-446b-9639-398f09484aa9" />
+
 
 *Figure 1. Volume and revenue (first three months = 100) nearly triple, while margin per swap rises and the failure rate spikes each April to June.*
 
 **2. Failures are concentrated and hardware-linked.** The top 15 stations cause 24.7% of failures, and 38 of 150 stations account for half. Hardware, not site type, separates them: Gen1 chargers fail 6.8% of swaps versus 4.4% for Gen2 and Gen3, while connectivity quality (5.4–5.9%) and location type (4.7–5.8%) barely differ. Delhi, Jaipur and Hyderabad hold every hotspot. Newer expansion waves perform better than launch stations (4.5% vs 5.8%), which weakens the case for opening more sites before fixing existing ones.
 
-![Failure concentration by station, hour and vehicle class](figs/06_q2_failure_concentration.png)
+<img width="2376" height="1475" alt="06_q2_failure_concentration" src="https://github.com/user-attachments/assets/198e86e0-de15-49d4-9b2a-7302a2d91ba0" />
+
 
 *Figure 2. The 15 worst stations (red bars) cause 24.7% of failures; three-wheelers and the 19:00 to 22:00 window fail most.*
 
 **3. Heat slows charging and creates stock-outs, mainly on Gen1.** Average charge time rises from 74 to 84 minutes between cool and hot conditions. On Gen1 it climbs from about 88 minutes to roughly 156 minutes once cabinet temperature passes 45°C, and in those conditions about 38% of station-hours have zero charged two-wheeler packs. When zero packs are on hand the no-battery rate is 7.2%, against 3.1% with more than 10 packs. Gen2 and Gen3 are barely affected.
 
-![Charge time and zero-stock hours against cabinet temperature](figs/09_q3_heat_chain.png)
+<img width="2675" height="696" alt="09_q3_heat_chain" src="https://github.com/user-attachments/assets/fd91f75f-1c12-4e66-bc19-c27c5ca6032c" />
+
 
 *Figure 3. Above 45°C cabinet temperature, Gen1 charge time and zero-stock hours climb sharply; no-battery failures are highest when no charged pack is on hand.*
 
 **4. One supplier's lots are failing early.** Kyron lots KY-2407, 2408 and 2409 (1,461 packs, 22.5% of the fleet) average about 61% state of health against roughly 80% for peers. They degrade 9.6 points per 100 cycles versus 3.1 for the rest and deliver about 52 km of range versus 63–90 km for other lots. Other Kyron lots are healthy, so the fault is lot-specific.
 
-![Battery state of health by supplier and lot](figs/12_q4_battery_health.png)
+<img width="2826" height="755" alt="12_q4_battery_health" src="https://github.com/user-attachments/assets/95a4210c-e55b-408f-aa5b-c4aff996c681" />
+
 
 *Figure 4. Kyron lots KY-2407, 2408 and 2409 cluster near 61% state of health, about 19 points below same-type peers.*
 
 **5. Early service failures and battery condition drive churn.** Retention is 87.6% for riders with no early failure, 83.3% with one, 73.7% with two and 55.6% with three (just 9 riders), a steep cliff after the second failure. Overall, riders with any failure in their first swaps retain 5.1 points worse, and 2,370 riders (13.6%) were exposed. In the driver model, battery condition and range is the primary factor, early service quality is secondary, and price, station quality and rider profile are negligible. The model is modest (AUC 0.58), so it ranks drivers rather than predicting individuals.
 
-![Rider retention by number of early failures](figs/17_q6_retention_curves.png)
+<img width="2976" height="755" alt="17_q6_retention_curves" src="https://github.com/user-attachments/assets/6c327bbc-1018-4980-b514-9e09578cf56e" />
+
 
 *Figure 5. Riders with early failures retain worse. The three-failure bar rests on only 9 riders, so read it as directional.*
 
 **6. Commercial levers are uneven.** The peak-pricing pilot cut peak-hour share by 3.1 points and added ₹2.2 per swap overall: +₹5.0 for independent riders, but –₹2.6 for partners whose surcharge is not billable. The largest partner, FeastFly (14.0% of revenue, 20.4% of contribution), earns ₹2.85 per swap versus ₹2.02 for the network, so it is healthy, but its 10.0% discount sits just under the 10.9% break-even. ZipDrop is the real drain: its discount was raised from 12% to 28% in November 2024 and its margin fell from –₹6.4 to –₹8.4 per swap.
 
-![Margin per swap and contribution share by partner](figs/16_q5_partner_economics.png)
+<img width="2975" height="801" alt="16_q5_partner_economics" src="https://github.com/user-attachments/assets/9a70857f-e4b0-44d4-822b-1076e8279122" />
+
 
 *Figure 6. ZipDrop, HaulKing, CargoTuk and ParcelNest lose money per swap; FeastFly sits above the network average (dashed line).*
 
